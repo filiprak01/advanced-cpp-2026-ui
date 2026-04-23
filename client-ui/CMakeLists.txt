@@ -35,7 +35,7 @@ target_include_directories(client-ui PRIVATE
 )
 
 target_link_libraries(client-ui PRIVATE
-    app-shared
+    app-common
     commonLib
     clientLib
     Qt6::Core

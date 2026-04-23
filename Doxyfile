@@ -6,19 +6,17 @@
 # Projekt
 #---------------------------------------------------------------------------
 PROJECT_NAME           = "advanced-cpp-2026-ui"
-PROJECT_BRIEF          = "Interfejs Qt6 dla aplikacji czatu - klient i panel admina"
-PROJECT_NUMBER         = 0.1.0
+PROJECT_BRIEF          = "Interfejs Qt6 dla aplikacji czatu - klient MVP"
+PROJECT_NUMBER         = 1.0.0
 OUTPUT_DIRECTORY       = docs
 OUTPUT_LANGUAGE        = Polish
 
 #---------------------------------------------------------------------------
 # Źródła
 #---------------------------------------------------------------------------
-INPUT                  = shared \
+INPUT                  = common \
                          client-ui/src \
                          client-ui/main.cpp \
-                         admin-ui/src \
-                         admin-ui/main.cpp \
                          README.md \
                          OVERVIEW.md \
                          DEADLINE_GUIDE.md \

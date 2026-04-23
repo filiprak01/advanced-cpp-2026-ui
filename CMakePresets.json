@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 16,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "client-debug",
+      "displayName": "Debug (client UI only)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/presets/client-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BUILD_ADMIN_UI": "OFF"
+      }
+    },
+    {
+      "name": "full-debug",
+      "displayName": "Debug (client UI + optional admin UI if present)",
+      "inherits": "client-debug",
+      "binaryDir": "${sourceDir}/build/presets/full-debug",
+      "cacheVariables": {
+        "BUILD_ADMIN_UI": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "client-debug",
+      "configurePreset": "client-debug"
+    },
+    {
+      "name": "full-debug",
+      "configurePreset": "full-debug"
+    }
+  ]
+}

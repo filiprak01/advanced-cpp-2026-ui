@@ -42,6 +42,3 @@ docs/html/
 docs/latex/
 docs/*.log
 docs/*.tag
-
-# pre-commit cache
-.pre-commit-hooks.yaml

@@ -154,7 +154,7 @@ ctest --test-dir build/ui-tests -R 'Integration' --output-on-failure --timeout 3
 
 ## 10. Opcjonalny build z panelem administratora
 
-Panel administratora jest rozszerzeniem poza MVP, ale target sie buduje.
+Panel administratora jest rozszerzeniem poza MVP. W aktualnym checkoutcie katalog `admin-ui/` nie jest wymagany; jesli go nie ma, CMake zbuduje klienta i pokaze tylko ostrzezenie.
 
 Konfiguracja:
 
@@ -169,11 +169,7 @@ Budowanie:
 cmake --build --preset full-debug
 ```
 
-Uruchomienie opcjonalnego panelu:
-
-```bash
-./build/presets/full-debug/admin-ui/admin-ui
-```
+Uruchomienie panelu administratora bedzie mozliwe dopiero po dodaniu katalogu `admin-ui/` z osobnym targetem.
 
 ## 11. Konfiguracja polaczenia
 

@@ -17,7 +17,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network WebSockets)
 
-add_subdirectory(shared)
+add_subdirectory(common)
 
 if(CLIENT_UI_USE_BACKEND_REPO)
     if(NOT EXISTS "${CLIENT_UI_BACKEND_REPO_DIR}/common/CMakeLists.txt"
@@ -36,8 +36,10 @@ if(CLIENT_UI_USE_BACKEND_REPO)
 endif()
 
 add_subdirectory(client-ui)
-if(BUILD_ADMIN_UI)
+if(BUILD_ADMIN_UI AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/admin-ui/CMakeLists.txt")
     add_subdirectory(admin-ui)
+elseif(BUILD_ADMIN_UI)
+    message(WARNING "BUILD_ADMIN_UI is ON, but admin-ui is not present in this MVP checkout.")
 endif()
 
 if(BUILD_UI_TESTS)

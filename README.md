@@ -25,8 +25,9 @@ Repozytorium zawiera desktopowy interfejs użytkownika Qt dla projektu PWChat. U
 - `client-ui/src/pages/` - główne ekrany aplikacji.
 - `client-ui/src/components/` - małe komponenty widoku.
 - `client-ui/src/routing/` - proste przełączanie ekranów.
-- `shared/` - modele, stan i rozszerzalne usługi współdzielone.
-- `admin-ui/` - opcjonalny panel administratora poza zakresem MVP.
+- `common/` - modele i stan współdzielony, który może zostać użyty też przez przyszły panel admina.
+- `client-ui/src/services/` - usługi konkretnego klienta użytkownika, czyli część niewspółdzielona.
+- `admin-ui/` - nie jest częścią bieżącego MVP; ewentualny panel admina zostaje rozszerzeniem.
 - `tests/` - testy jednostkowe UI uruchamiane ręcznie.
 - `config/` - konfiguracja połączenia z backendem.
 
@@ -54,12 +55,14 @@ cmake --preset client-debug
 cmake --build --preset client-debug
 ```
 
-Opcjonalnie z panelem administratora:
+Opcjonalny preset rozszerzeniowy:
 
 ```bash
 cmake --preset full-debug
 cmake --build --preset full-debug
 ```
+
+Jeśli katalog `admin-ui/` nie istnieje, preset zbuduje klienta i pokaże tylko ostrzeżenie CMake.
 
 ## Uruchomienie
 
