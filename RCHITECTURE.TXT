@@ -1,0 +1,111 @@
+Frontend aplikacji składa się z następujących typów klas:
+
+Pages – klasy reprezentujące widoki aplikacji
+
+Components – mniejsze elementy UI
+
+Controllers – obsługa logiki i akcji użytkownika
+
+Services – komunikacja z backendem
+
+State Management – zarządzanie stanem aplikacji
+
+Event Handling – obsługa zdarzeń z backendu
+
+Routing – nawigacja między widokami
+
+5.1 Pages
+ConnectionPage
+Strona logowania i rejestracji użytkownika.
+
+ChannelListPage
+Strona wyświetlająca listę dostępnych kanałów.
+
+ChannelPage
+Strona wyświetlająca listę dostępnych kanałów.\
+
+AdminDashboardPage
+Panel administracyjny (zarządzanie użytkownikami i kanałami).
+
+5.2 Components
+LoginFormComponent – formularz logowania
+
+RegistrationFormComponent – formularz rejestracji
+
+AuthToggleComponent – przełączanie między logowaniem a rejestracją
+
+ConnectionStatusComponent – status połączenia
+
+ChannelItemComponent – pojedynczy kanał na liście
+
+MessageListComponent – lista wiadomości
+
+MessageItemComponent – pojedyncza wiadomość
+
+MessageInputComponent – pole do wpisywania wiadomości
+
+UserListComponent – lista użytkowników
+
+ChannelManagementComponent – zarządzanie kanałami
+
+SidebarComponent – panel boczny
+
+HeaderBarComponent – pasek nagłówka
+
+NotificationComponent – powiadomienia
+
+LoadingComponent – wskaźnik ładowania
+
+ErrorComponent – wyświetlanie błędów
+
+5.3 Controllers
+ConnectionController – zarządza połączeniem
+
+AuthController – obsługuje logowanie i rejestrację
+
+ChannelController – operacje na kanałach
+
+MessageController – obsługa wiadomości
+
+AdminController – operacje administracyjne
+
+5.4 Services
+ConnectionService – inicjalizacja i utrzymanie połączenia
+
+WebSocketService – komunikacja z serwerem
+
+AuthService – operacje logowania i rejestracji
+
+MessageService – obsługa wiadomości
+
+ChannelService – operacje na kanałach
+
+UserService – operacje na użytkownikach
+
+5.5 State Management
+AppState – globalny stan aplikacji
+
+ConnectionState – stan połączenia
+
+SessionState – dane zalogowanego użytkownika
+
+ChannelState – stan kanałów
+
+MessageState – stan wiadomości
+
+5.6 Event Handling
+UIEventDispatcher
+Odpowiada za obsługę zdarzeń po stronie UI.
+
+EventMapper
+Mapuje eventy z backendu na akcje frontendowe.
+
+EventHandler
+Wykonuje odpowiednie akcje w odpowiedzi na eventy.
+
+2.7 Routing
+Router
+Odpowiada za nawigację między stronami.
+
+RouteGuard
+Kontroluje dostęp do stron (np. tylko dla zalogowanych użytkowników lub admina).
