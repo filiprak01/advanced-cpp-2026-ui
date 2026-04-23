@@ -1,0 +1,116 @@
+# Doxyfile - konfiguracja Doxygen dla advanced-cpp-2026-ui
+# Generuje dokumentację HTML w języku polskim.
+# Uruchom: ./scripts/gen-docs.sh  lub  doxygen Doxyfile
+
+#---------------------------------------------------------------------------
+# Projekt
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "advanced-cpp-2026-ui"
+PROJECT_BRIEF          = "Interfejs Qt6 dla aplikacji czatu - klient i panel admina"
+PROJECT_NUMBER         = 0.1.0
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = Polish
+
+#---------------------------------------------------------------------------
+# Źródła
+#---------------------------------------------------------------------------
+INPUT                  = shared \
+                         client-ui/src \
+                         client-ui/main.cpp \
+                         admin-ui/src \
+                         admin-ui/main.cpp \
+                         README.md \
+                         OVERVIEW.md \
+                         DEADLINE_GUIDE.md \
+                         EXTENSION.md \
+                         IMPLEMENTATION.md \
+                         ADDITIONAL.md
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.hpp *.cpp *.md
+EXCLUDE_PATTERNS       = */build/* \
+                         *_autogen* \
+                         */moc_* \
+                         */qrc_*
+USE_MDFILE_AS_MAINPAGE = OVERVIEW.md
+MARKDOWN_SUPPORT       = YES
+
+#---------------------------------------------------------------------------
+# Ekstrakcja
+#---------------------------------------------------------------------------
+# Dokumentuj wszystkie symbole, nawet nieudokumentowane. Jest to wygodne
+# podczas kończenia projektu, gdy część klas jest jeszcze w trakcie pracy.
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = YES
+
+#---------------------------------------------------------------------------
+# Ostrzeżenia
+#---------------------------------------------------------------------------
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+WARN_LOGFILE           = docs/doxygen-warnings.log
+
+#---------------------------------------------------------------------------
+# Wyjście HTML
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_TIMESTAMP         = YES
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 280
+
+#---------------------------------------------------------------------------
+# Wyjście LaTeX - wyłączone
+#---------------------------------------------------------------------------
+GENERATE_LATEX         = NO
+
+#---------------------------------------------------------------------------
+# Diagramy (wymaga Graphviz - apt install graphviz)
+#---------------------------------------------------------------------------
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 4
+CLASS_DIAGRAMS         = YES
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+DOT_CLEANUP            = YES
+
+#---------------------------------------------------------------------------
+# Preprocessor - Qt-specyficzne makra
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+PREDEFINED             = Q_OBJECT= \
+                         Q_SIGNALS=signals \
+                         Q_SLOTS=slots \
+                         Q_EMIT=emit \
+                         Q_DECL_OVERRIDE=override \
+                         Q_DECL_FINAL=final \
+                         "signals=public" \
+                         "slots=" \
+                         "emit="
+
+EXCLUDE_SYMLINKS       = YES
+SKIP_FUNCTION_MACROS   = YES
+
+#---------------------------------------------------------------------------
+# Indeks
+#---------------------------------------------------------------------------
+ALPHABETICAL_INDEX     = YES
+GENERATE_TAGFILE       = docs/advanced-cpp-2026-ui.tag
+
+#---------------------------------------------------------------------------
+# Wyszukiwanie
+#---------------------------------------------------------------------------
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO

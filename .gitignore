@@ -1,0 +1,47 @@
+# Build output
+build/
+
+# CMake files generated outside build/
+compile_commands.json
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_flags.txt
+
+# Compiled artifacts
+*.o
+*.a
+*.so
+*.so.*
+*.dylib
+*.exe
+*.out
+*.app
+
+# Qt generated files
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+
+# IDE and local files
+.vscode/
+.idea/
+*.user
+*.creator
+*.config
+*.files
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Doxygen output
+docs/html/
+docs/latex/
+docs/*.log
+docs/*.tag
+
+# pre-commit cache
+.pre-commit-hooks.yaml
